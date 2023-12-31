@@ -2,7 +2,14 @@
 
 The invert index object represents information about teams with the following attributes:
 
-- **Team Name**: The name of the team.
+- **INVER INDEX** Models:
+    - **word**: str
+    - **count**: int
+    - **data**: list[dict]
+        - **dir**: str
+        - **file**: str
+        - **count**: int
+        - **positions**: list[int] 
 
 The structure is as follows:
 
