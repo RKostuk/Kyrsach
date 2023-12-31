@@ -20,24 +20,28 @@ async def start_container():
 @router.get("/search_info_word")
 async def start_container(word: str):
     data = structure_index.get_value(word)
-    return {"message": data}
+    return data
 
 
 @router.get("/search_text_all")
 async def start_container(word: str):
     info = structure_index.get_value(word)
-    data = info.get("data")
+    if info is None:
+        return {"Error": "Not found word"}
+    data = info.get("data").copy()
     for i in range(len(data)):
         data[i]["content"] = file_cont.read_file(data[i]["dir"], data[i]["file"])
-    return {"message": data}
+    return {word: data}
 
 
 @router.get("/search_text")
 async def start_container(word: str, index: int):
     info = structure_index.get_value(word)
+    if info is None:
+        return {"Error": "Not found word"}
     data = info.get("data")[index]
     content = file_cont.read_file(data["dir"], data["file"])
-    return {"message": content}
+    return content
 
 
 @router.get("/refresh_index")
@@ -46,4 +50,4 @@ async def start_container():
     index_processor.process_directory()
     inverted_index = index_processor.get_inverted_index()
     structure_index.write_json(inverted_index)
-    return {"message": f"Success update data"}
+    return {"message": f"Success"}
