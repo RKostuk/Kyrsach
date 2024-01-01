@@ -101,8 +101,8 @@ Response:
 ```
 
 ### Where this word is found
-Endpoint: `http://localhost:8000/search_info_word`
-Method: `GET`
+Endpoint: `http://localhost:8000/search_info_word`  
+Method: `GET`  
 Request query params:
 ```
     word="str"
@@ -126,8 +126,8 @@ Response:
 ```
 
 ### Where this word is found and their texts
-Endpoint: `http://localhost:8000/search_text_all`
-Method: `GET`
+Endpoint: `http://localhost:8000/search_text_all`  
+Method: `GET`  
 Request query params:
 ```
     word="str"
@@ -152,8 +152,8 @@ Response:
 ```
 
 ### Search for text by index
-Endpoint: `http://localhost:8000/search_text`
-Method: `GET`
+Endpoint: `http://localhost:8000/search_text`  
+Method: `GET`  
 Request query params:
 ```
     word="str"&index: "int"
@@ -165,9 +165,9 @@ Response:
 ```
 
 ### Search for text by index
-Endpoint: `http://localhost:8000/refresh_index`
-Method: `GET`
-Response:
+Endpoint: `http://localhost:8000/refresh_index`  
+Method: `GET`  
+Response:  
 ```json
 {
   "message": "str"
