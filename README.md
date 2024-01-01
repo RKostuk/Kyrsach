@@ -104,10 +104,8 @@ Response:
 Endpoint: `http://localhost:8000/search_info_word`
 Method: `GET`
 Request query params:
-```json
-{
-    "word": "str"
-}
+```
+    word="str"
 ```
 
 Response:
@@ -131,10 +129,8 @@ Response:
 Endpoint: `http://localhost:8000/search_text_all`
 Method: `GET`
 Request query params:
-```json
-{
-    "word": "str"
-}
+```
+    word="str"
 ```
 
 Response:
@@ -159,11 +155,8 @@ Response:
 Endpoint: `http://localhost:8000/search_text`
 Method: `GET`
 Request query params:
-```json
-{
-    "word": "str",
-    "index": "int"
-}
+```
+    word="str"&index: "int"
 ```
 
 Response:
