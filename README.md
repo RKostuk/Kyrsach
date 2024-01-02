@@ -38,6 +38,11 @@ To test this API, you can use the interactive Swagger documentation. To do this,
 
 Swagger provides a convenient interface to make requests to the API. You can check available endpoints, see what parameters they expect, and even try out real requests.
 
+### Using Pytest for Automated Testing
+```bash
+    pytest
+```
+
 # Getting Started
 **Clone the project from GitHub**:
    ```bash
