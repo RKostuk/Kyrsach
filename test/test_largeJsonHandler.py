@@ -24,7 +24,7 @@ def test_write_json():
     with patch('builtins.open', mock_open()) as mock_file:
         LargeJsonHandler.write_json(test_data)
         mock_file.assert_called_with('inverted_index.json', 'w')
-        mock_file().write.assert_called()  # Check that write is called, but not how many times
+        mock_file().write.assert_called()
 
 # Test for get_value method
 def test_get_value():
