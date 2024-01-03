@@ -48,6 +48,7 @@ Swagger provides a convenient interface to make requests to the API. You can che
    ```bash
    git clone https://github.com/RKostuk/Kyrsach.git
    ```
+Before starting, install [python 3.11](https://www.python.org/downloads/release/python-3110/) as the main version  
 To run the project, follow these steps:
 
 1. **Create a virtual environment (optional but recommended)**:
