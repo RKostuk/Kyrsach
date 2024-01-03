@@ -16,15 +16,23 @@ router = APIRouter()
 async def start_container():
     return {"message": f"Nice it's work"}
 
+@router.get("/check_index")
+async def check_index():
+    if structure_index.data is None:
+        status = False
+    else:
+        status = True
+    return {"status": status}
+
 
 @router.get("/search_info_word")
-async def start_container(word: str):
+async def search_info_word(word: str):
     data = structure_index.get_value(word)
     return data
 
 
 @router.get("/search_text_all")
-async def start_container(word: str):
+async def search_text_all(word: str):
     info = structure_index.get_value(word)
     if info is None:
         return {"Error": "Not found word"}
@@ -35,7 +43,7 @@ async def start_container(word: str):
 
 
 @router.get("/search_text")
-async def start_container(word: str, index: int):
+async def search_text(word: str, index: int):
     info = structure_index.get_value(word)
     if info is None:
         return {"Error": "Not found word"}
@@ -45,7 +53,7 @@ async def start_container(word: str, index: int):
 
 
 @router.get("/refresh_index")
-async def start_container():
+async def refresh_index():
     index_processor = InvertedIndexProcessor()
     index_processor.process_directory()
     inverted_index = index_processor.get_inverted_index()
