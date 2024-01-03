@@ -4,6 +4,7 @@ class Config:
     reload: bool = True
     path: str = "app.main:app"
 
+
 class ConfigInverIndex:
     dir: str = "files"
     thread: int = 8

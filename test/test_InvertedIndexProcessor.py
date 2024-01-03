@@ -4,6 +4,7 @@ import os
 import shutil
 from collections import defaultdict
 
+
 class TestInvertedIndexProcessor(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -26,6 +27,7 @@ class TestInvertedIndexProcessor(unittest.TestCase):
         processor = InvertedIndexProcessor(self.test_directory)
         self.assertTrue(processor.check_file_exists(os.path.join(self.test_directory, 'test1.txt')))
         self.assertFalse(processor.check_file_exists('nonexistent.txt'))
+
 
 if __name__ == '__main__':
     unittest.main()

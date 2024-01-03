@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor
 from app.core.config import ConfigInverIndex
 from queue import Queue
 
+
 class InvertedIndexProcessor:
     def __init__(self):
         self.directory = ConfigInverIndex.dir
