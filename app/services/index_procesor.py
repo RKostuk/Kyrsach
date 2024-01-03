@@ -4,13 +4,14 @@ import re
 import time
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
+from app.core.config import ConfigInverIndex
 from queue import Queue
 
 class InvertedIndexProcessor:
-    def __init__(self, directory, num_threads=8):
-        self.directory = directory
+    def __init__(self):
+        self.directory = ConfigInverIndex.dir
+        self.num_threads = ConfigInverIndex.thread
         self.inverted_index = defaultdict(lambda: {"count": 0, "data": []})
-        self.num_threads = num_threads
 
     def check_file_exists(self, file_path):
         return os.path.exists(file_path)
@@ -63,7 +64,7 @@ class InvertedIndexProcessor:
 
 
 if __name__ == "__main__":
-    index_processor = InvertedIndexProcessor('files')
+    index_processor = InvertedIndexProcessor()
     start_time = time.time()
     index_processor.process_directory()
     end_time = time.time()

@@ -46,7 +46,7 @@ async def start_container(word: str, index: int):
 
 @router.get("/refresh_index")
 async def start_container():
-    index_processor = InvertedIndexProcessor('files')
+    index_processor = InvertedIndexProcessor()
     index_processor.process_directory()
     inverted_index = index_processor.get_inverted_index()
     structure_index.write_json(inverted_index)
