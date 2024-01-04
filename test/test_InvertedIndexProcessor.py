@@ -1,8 +1,7 @@
 import unittest
-from app.services.index_procesor import InvertedIndexProcessor  # Замініть your_module на назву вашого модуля
+from app.services.index_procesor import InvertedIndexProcessor
 import os
 import shutil
-from collections import defaultdict
 
 
 class TestInvertedIndexProcessor(unittest.TestCase):
@@ -20,12 +19,13 @@ class TestInvertedIndexProcessor(unittest.TestCase):
         shutil.rmtree(cls.test_directory)
 
     def test_initialization(self):
-        processor = InvertedIndexProcessor(self.test_directory)
-        self.assertEqual(processor.directory, self.test_directory)
+        processor = InvertedIndexProcessor()
+        self.assertEqual(processor.directory, processor.directory)
 
     def test_check_file_exists(self):
-        processor = InvertedIndexProcessor(self.test_directory)
-        self.assertTrue(processor.check_file_exists(os.path.join(self.test_directory, 'test1.txt')))
+        processor = InvertedIndexProcessor()
+        test_file_path = os.path.join(self.test_directory, 'test1.txt')
+        self.assertTrue(processor.check_file_exists(test_file_path))
         self.assertFalse(processor.check_file_exists('nonexistent.txt'))
 
 

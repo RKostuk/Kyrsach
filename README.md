@@ -106,6 +106,16 @@ Response:
 }
 ```
 
+### Check if the index has been generated
+Endpoint: `http://localhost:8000/check_index`  
+Method: `GET`  
+Response:
+```json
+{
+  "status": true
+}
+```
+
 ### Where this word is found
 Endpoint: `http://localhost:8000/search_info_word`  
 Method: `GET`  
@@ -130,17 +140,6 @@ Response:
   ]
 }
 ```
-
-### Check if the index has been generated
-Endpoint: `http://localhost:8000/check_index`  
-Method: `GET`  
-Response:
-```json
-{
-  "status": true
-}
-```
-
 
 ### Where this word is found and their texts
 Endpoint: `http://localhost:8000/search_text_all`  
@@ -181,7 +180,7 @@ Response:
     "str"
 ```
 
-### Search for text by index
+### Index update
 Endpoint: `http://localhost:8000/refresh_index`  
 Method: `GET`  
 Response:  

@@ -1,5 +1,6 @@
 import json
 import os
+import time
 
 from fastapi import APIRouter
 
@@ -55,7 +56,13 @@ async def search_text(word: str, index: int):
 @router.get("/refresh_index")
 async def refresh_index():
     index_processor = InvertedIndexProcessor()
+    # start_time = time.time()
     index_processor.process_directory()
+    # end_time = time.time()
     inverted_index = index_processor.get_inverted_index()
     structure_index.write_json(inverted_index)
+
+    # elapsed_time = end_time - start_time
+    # print(f"Час виконання: {elapsed_time} секунд")
+
     return {"message": f"Success"}
